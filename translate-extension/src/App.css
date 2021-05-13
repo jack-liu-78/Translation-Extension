@@ -1,38 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Main-Container{
+  text-align: center;
+  padding: 5px;
+  font-family: 'Varela Round';
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+    display: inline;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: #A1D2E2;
+    color: #3A9BBB;
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    margin-left: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+input{
+  display: inline;
+  background-color: white;
+  width: 250px;
+  height: 30px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  padding-left: 10px;
+  font-size: 0.8rem;
 }
 
-.App-link {
-  color: #61dafb;
+select{
+  display: inline;
+  background-color: white;
+  width: 250px;
+  height: 20px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  padding-left: 5px;
+  margin-left: 5px;
+  font-size: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+label{
+  padding: 10px;
+  color: #2CA06C;
+  font-weight: 600;
+  font-size: 1rem;
 }
+
+h3{
+  font-size: 1.2rem;
+}
+

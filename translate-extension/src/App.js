@@ -15,7 +15,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="Main-Container">
         <form onSubmit={this.handleSubmit}>
           <input
             id="new-todo"
@@ -26,7 +26,7 @@ class App extends React.Component {
             Translate
           </button>
           <label>
-          Translation Language
+          Language
           <select value={this.state.lang} onChange={this.handleLangChange}>
             <option value="en">English</option>
             <option value="ko">Korean</option>
@@ -54,19 +54,14 @@ class App extends React.Component {
     var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=" + this.state.lang + "&dt=t&q=" + encodeURI(this.state.text);
     fetch(url)
         .then(response => response.json())
-        .then(data => this.setState({ translated: data[0][0][0]}));
+        .then(data => {
+          var result = "";
+          for (var i = 0; i < data[0].length; i++) {
+            result += data[0][i][0];          
+            this.setState({ translated: result})
+        }
+      });
   }
 }
-
-// function App(lang) {
-
-//   return (
-//     <div className="App">
-//       <TranslateMainContainer/>
-//     </div>
-//   );
-// }
-
-
 
 export default App;
