@@ -1,3 +1,4 @@
+/* global chrome */
 import './App.css';
 import React from 'react';
 
@@ -6,7 +7,7 @@ import React from 'react';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { text: props.text, lang: props.lang };
+    this.state = { text: props.data.text, lang: props.data.lang };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleLangChange = this.handleLangChange.bind(this);
@@ -40,9 +41,11 @@ class App extends React.Component {
 
   handleTextChange(e) {
     this.setState({ text: e.target.value });
+    chrome.storage.local.set({text: e.target.value});
   }
   handleLangChange(e) {
     this.setState({ lang: e.target.value });
+    chrome.storage.local.set({lang: e.target.value});
   }
 
   handleSubmit(e) {
